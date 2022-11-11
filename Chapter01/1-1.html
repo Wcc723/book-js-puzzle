@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 全域變數 / 全域屬性
+      // var a = '小明';
+      // console.log(a);
+      // console.log(window);
+
+
+      // var a = '小明';
+      // function fn() {
+      //   console.log(a); // '小明' 字串
+      //   console.log(window); // Window 物件
+      // }
+      // fn();
+
+
+      // function fn() {
+      //   a = ' 小明 '; // 先使用 a 在函式內定義，注意在此沒有使用 var }
+      //   console.log(window);
+      // }
+      // fn();
+
+
+      // 01 為什麼變數需要被宣告?
+      // function fn() {
+      //   a = '小明';
+      // }
+      // function fn2() {
+      //   console.log(a); // 小明 }
+      // }
+      // fn();
+      // fn2();
+
+
+      // 這裡的setTimeout會形成一個獨立的作用域
+      // setTimeout(function () {
+      //   data = []; // 未宣告的變數，因此成為全域屬性
+      //   updateData(); // 呼叫另一個作用域的函式
+      //   console.log(data); // [{ name: ' 小明 ' }]
+      // }, 1000);
+      // function updateData() {
+      //   // 另一個函式直接操作全域屬性
+      //   data.push({
+      //     name: ' 小明 ',
+      //   });
+      // }
+
+      // setTimeout(function () {
+      //   data = [];
+      //   updateData();
+      // }, 1000);
+      // function updateData() {
+      //   data.push({
+      //     name: ' 小明 ',
+      //   });
+      // }
+      // // ⋯ 在此插入了數百行程式碼
+      // setTimeout(() => {
+      //   data = {}; // 啊嗚，這個地方直接把剛剛辛苦建立的 data 給清除了
+      //   console.log(data);
+      // }, 1001);
+
+
+      // 02 變數與屬性的差異為何?
+      // var obj = { a: '小明' };
+      // delete obj.a;
+      // console.log(obj.a); // undefined
+
+
+      // a = '小明';
+      // delete a;
+      // console.log(window.a); // undefined
+      // console.log(a); // Uncaught ReferenceError: a is not defined
+
+
+      // var a = '小明';
+      // delete a;
+      // console.log(window.a); // 小明 console.log(a); // 小明
+
+
+      // 小節測驗
+      // (function () {
+      //   myName = ' 小明 ';
+      // })();
+      // console.log(myName);
+    </script>
+  </body>
+</html>
