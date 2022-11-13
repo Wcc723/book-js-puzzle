@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 箭頭函式
+      // var callSomeone = function (someone) {
+      //   return someone + ' 吃飯了 ';
+      // };
+
+      // var callSomeone = (someone) => {
+      //   return someone + ' 吃飯了 ';
+      // };
+      // console.log(callSomeone(' 小明 '));
+
+
+      // 縮寫,單一行陳述不需要 {}
+      // var callSomeone = (someone) => someone + ' 吃飯了 ';
+      // console.log(callSomeone(' 小明 '));
+      // 只有一個參數可以不加小括號
+      // var callSomeone = someone => someone + ' 吃飯了 ';
+      // console.log(callSomeone(' 小明 '));
+      // 沒有參數時,一定要有小括號
+      // var callSomeone = () => ' 小明 ' + ' 吃飯了 ';
+      // console.log(callSomeone(' 小明 '));
+
+
+      // ## 指向的 this 不同
+      // var myName = ' 全域的小明 ';
+      // var family = {
+      //   myName: ' 小明家 ',
+      //   callName: () => {
+      //     console.log(this) // window
+      //     console.log(this.myName); // ' 全域的小明 '
+      //   }
+      // }
+      // family.callName();
+
+
+      // var family = {
+      //   myName: ' 小明家 ',
+      //   callName: function () {
+      //     var fn = () => {
+      //       console.log(this); // family 物件
+      //       console.log(this.myName); // ' 小明家 '
+      //     }
+      //     fn();
+      //   }
+      // }
+      // family.callName();
+
+
+      // var person = {
+      //   myName: ' 恩娣 ',
+      //   callName: function () {
+      //     // 注意,這裡是 function,以此為基準產生一個作用域
+      //     console.log(1, this.myName); // 1 ' 恩娣 '
+      //     // 寫法一:使用箭頭函式,this 將能指向 person 物件
+      //     setTimeout(() => {
+      //       console.log(2, this.myName); // 2 ' 恩娣 '
+      //     }, 10);
+      //     // 寫法二:傳統函式 this 無法正確指向 person
+      //     setTimeout(function () {
+      //       console.log(3, this.myName); // ' 全域小明 '
+      //     }, 10);
+      //   },
+      // };
+      // auntie.callName();
+
+
+
+      // ## call、apply、bind 無法綁定 this
+      // var person = {
+      //   myName: ' 恩娣 ',
+      //   callName: function () {
+      //     // 注意,這裡是 function,以此為基準產生一個作用域
+      //     console.log(1, this.myName); // 1 ' 恩娣 '
+      //     // 寫法一:使用箭頭函式,this 將能指向 person 物件
+      //     setTimeout(() => {
+      //       console.log(2, this.myName); // 2 ' 恩娣 '
+      //     }, 10);
+      //     // 寫法二:傳統函式 this 無法正確指向 person
+      //     setTimeout(function () {
+      //       console.log(3, this.myName); // ' 全域小明 '
+      //     }, 10);
+      //   },
+      // };
+      // auntie.callName();
+
+
+      // ## 不能作為函式建構子使用
+      // var MyFamily = () => {
+      //   this.myName = name;
+      // }
+      // var myFamily = new MyFamily(' 小明 '); // MyFamily is not a constructor
+
+
+      // var MyFamily = function () {
+      //   this.myName = name;
+      // }
+      // // Cannot set properties of undefined (setting 'callMyName')
+      // MyFamily.prototype.callMyName = function () {
+      //   console.log(this.myName);
+      // }
+
+      // ## 沒有 arguments 引數
+      // var fn = () => {
+      //   console.log(arguments); // arguments is not defined
+      // }
+      // fn(1, 2, 3, 4);
+
+
+      // var fn = (...arg) => {
+      //   console.log(arg); // [1, 2, 3, 4]
+      // }
+      // fn(1, 2, 3, 4);
+
+
+      // ## 箭頭函式回傳物件的問題
+      // var returnObj = () => { myName: ' 小明 ' };
+      // console.log(returnObj()); // undefined
+
+
+      // var returnObj = () => ({ myName: ' 小明 ' });
+      // console.log(returnObj()); // {myName: ' 小明 '}
+
+
+      // ## 小節測驗
+      // 1. 請問以下程式碼執行後的值為?
+      // var arr = [1, 2, 3];
+      // var num = 4;
+      // var obj = {
+      //   fn: function () {
+      //     arr.forEach((num) => {
+      //       console.log(this.num);
+      //     });
+      //   },
+      //   num: 5,
+      // };
+      // obj.fn();
+    </script>
+  </body>
+
+</html>

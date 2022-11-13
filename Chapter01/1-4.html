@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <script>
+      // ## 運作情境
+      // var myName;
+      // console.log(myName); // undefined
+
+
+      // console.log(myName);
+      // // Uncaught ReferenceError: myName is not defined
+      // 1 + 1; // 此行不會被執行
+
+
+      // var myName;
+      // myName = undefined; // 別這麼做
+      // myName = null; // 空值請使用 null 替代,至少會知道這是人給的
+
+
+      // ## undefined 其他狀況
+      // var person = {};
+      // console.log(person.name); // undefined
+
+
+      // var person = {};
+      // console.log(person.name.first);
+      // // Uncaught TypeError: Cannot read properties of undefined (reading 'first')
+
+
+      // var person = {};
+      // // 方法一:先使用 if 判斷深層屬性的上一層的值是否存在,如果存在,才會取得更深層的屬性值
+      // if (person.hasOwnProperty('name')) {
+      //   console.log(person.name.first); // 不會被執行,避免錯誤的出現
+      // }
+
+      // // 方法二:使用新增語法 Optional chaining operator
+      // console.log(person?.name?.first); // 會取得 undefined 的結果,但不會出錯
+    </script>
+  </body>
+
+</html>

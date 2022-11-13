@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 函式建構子
+      // var Bibi = {
+      //   name: ' 比比 ',
+      //   color: ' 棕色 ',
+      //   size: ' 小 ',
+      //   bark: function () {
+      //     console.log(this.name + ' 吠叫 ');
+      //   }
+      // }
+      // var Pupu = {
+      //   name: ' 噗噗 ',
+      //   color: ' 白 ',
+      //   size: ' 大 ',
+      //   bark: function () {
+      //     console.log(this.name + ' 吠叫 ');
+      //   }
+      // }
+
+      // ## 函式建構子、原型 prototype 與 new 建構子
+      // function Dog(name, color, size) { // 函式建構子
+      //   this.name = name
+      //   this.color = color || ' 白色 ';
+      //   this.size = size || ' 小 ';
+      // }
+      // var Bibi = new Dog(' 比比 ', ' 棕色 ', ' 小 '); // 使用 new 運算子建立實體
+      // var Pupu = new Dog(' 噗噗 ', ' 白 ', ' 大 ');
+      // console.log(Bibi);
+
+
+      // Dog.prototype.bark = function () {
+      //   console.log(`${this.name} 吠叫 `);
+      // }
+      // console.log(Bibi, Pupu);
+      // Bibi.bark(); // 比比 吠叫
+      // Pupu.bark(); // 噗噗 吠叫
+
+
+      // ## 35 __proto__ 與 prototype 的差異?
+      // console.log(Bibi.__proto__ === Dog.prototype); // true
+
+
+      // ## 多層原型繼承
+      // function Animal(family) {
+      //   this.basic = ' 有四肢、五官 ';
+      //   this.family = family || ' 人科 ';
+      // }
+
+
+      // Animal.prototype.move = function () {
+      //   console.log(`${this.name} 移動 `);
+      // }
+      // var Ming = new Animal();
+      // Ming.name = ' 小明 '; // 預設動物的物種是不需要名字的,名字屬於每個動物各自的特徵
+      // Ming.move(); // 小明 移動
+
+
+      // function Dog(name, color, size) {
+      //   Animal.call(this, ' 狗科 ');
+      //   this.name = name;
+      //   this.color = color || ' 白色 ';
+      //   this.size = size || ' 小 ';
+      // }
+      // Dog.prototype = Object.create(Animal.prototype);
+      // Dog.prototype.constructor = Dog;
+      // Dog.prototype.bark = function () {
+      //   console.log(this.name + ' 吠叫 ');
+      // }
+      // var Bibi = new Dog(' 比比 ', ' 棕色 ', ' 小 ');
+      // Bibi.bark(); // 比比 吠叫
+      // Bibi.move(); // 比比 移動
+      // console.log(Bibi);
+      // // {basic: ' 有四肢、五官 ', family: ' 狗科 ', name: ' 比比 ', color: ' 棕色 ', size: ' 小 '}
+
+
+      // console.log(Bibi.__proto__.constructor === Dog); // true
+      // console.log(Bibi.__proto__.__proto__.constructor === Animal); // true
+
+
+      // console.log(Bibi.constructor === Dog); // true
+
+
+      // console.log(' 小明 '.constructor); // String
+
+
+      // function Cat(name, color, size) {
+      //   Animal.call(this, ' 貓科 ');
+      //   this.name = name;
+      //   this.color = color || ' 白色 ';
+      //   this.size = size || ' 小 ';
+      // }
+      // Cat.prototype = Object.create(Animal.prototype);
+      // Cat.prototype.constructor = Cat;
+      // Cat.prototype.meow = function () {
+      //   console.log(this.name + ' 喵喵叫 ');
+      // }
+      // var Kity = new Cat(' 凱蒂 ');
+      // Kity.meow(); // 凱蒂 喵喵叫
+      // Kity.move(); // 凱蒂 移動
+      // console.log(Kity); // {basic: ' 有四肢、五官 ', family: ' 貓科 ', name: ' 凱蒂 ', color: ' 白色 ', size: ' 小 '}
+
+
+      // ## 36 如何在當前的原始型別包裹物件擴展新的方法
+      // Number.prototype.isEven = function () {
+      //   return !(this % 2);
+      // }
+      // var num = new Number(1);
+      // console.log(num);
+
+
+      // console.log((1).isEven()); // false
+      // console.log((2).isEven()); // true
+
+
+      // ## 原型全運作圖
+      // console.log(Bibi.__proto__ === Dog.prototype); // true
+      // console.log(Dog.prototype.__proto__ === Animal.prototype); // true
+      // console.log(Animal.prototype.__proto__ === Object.prototype); // true
+      // console.log(Object.prototype.__proto__ === null); // true
+      // console.log(Bibi.__proto__.__proto__.__proto__.__proto__ === null); // true
+      // Bibi > 狗 > 動物 > 物件 === null
+
+
+      // console.log(Dog.__proto__ === Function.prototype); // true
+      // console.log(Function.constructor === Function); // true
+      // console.log(Function.__proto__ === Function.prototype); // true
+      // 函式的是由 Function 自己所建構的,因此原型也會指向 Function
+      // console.log(Function.prototype.__proto__ === Object.prototype); // true
+      // 函式的頂層也是物件,最頂層也會指向 null
+
+
+      // ## 小節測驗
+      // 1. 請問以下的執行後的值為?
+      // function Person(name) {
+      //   this.name = name;
+      // }
+      // var Ming = new Person(' 小明 ');
+      // Person.prototype.callMe = () => `${this.name} 你好 `;
+      // console.log(Ming.callMe());
+    </script>
+  </body>
+
+</html>

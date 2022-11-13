@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 40 如何將 function 函式建構子改為 class 的寫法
+      // class Animal {
+      //   constructor(family) {
+      //     this.basic = ' 有眼睛、嘴巴 ';
+      //     this.family = family || ' 人科 ';
+      //   }
+      //   move() {
+      //     console.log(`${this.name} 移動 `);
+      //   }
+      // }
+      // const human = new Animal(' 人科 '); // 建立物種方式與先前一樣
+      // human.move(); // undefined 移動,雖然可以呼叫方法,但該物種還沒有名字
+      // console.log(human); // 雖然建立方式不同,但結果與 Function 函式建構子接近
+
+
+      // class Dog extends Animal {
+      //   constructor(name, color, size) {
+      //     super(' 狗科 '); // call Animal constructor
+      //     this.name = name;
+      //     this.color = color;
+      //     this.size = size;
+      //   }
+      //   bark() {
+      //     console.log(`${this.name} 吠叫 `);
+      //   }
+      // }
+      // const Bibi = new Dog(' 比比 ', ' 棕色 ', ' 小 ');
+      // console.log(Bibi);
+      // Bibi.bark();
+      // Bibi.move();
+
+
+      // console.log(Bibi.__proto__ === Dog.prototype); // true
+      // console.log(Bibi.__proto__.__proto__ === Animal.prototype); // true
+      // console.log(Bibi.__proto__.constructor === Dog); // true
+
+
+      // ## 41 如何使用 class 擴展內建函式建構子
+      // class DateFormatter extends Date {
+      //   constructor(d = new Date()) {
+      //     super(d);
+      //   }
+      //   getLocalDate() {
+      //     const months = [' 一月 ', ' 二月 ', ' 三月 ', ' 四月 ', ' 五月 ', ' 六月 ',
+      //       ' 七月 ', ' 八月 ', ' 九月 ', ' 十月 ', ' 十一月 ', ' 十二月 '];
+      //     return ` 西元 ${this.getFullYear() - 1911} 年 ${months[this.getMonth()]} ${this.getDate()} 日 `;
+      //   }
+      // }
+      // const date = new DateFormatter();
+      // console.log(date.getLocalDate()); // 西元 2022 年 七月 10 日
+      // console.log(date.getTime()); // 1657432572487
+
+
+      // ## 小節測驗
+      // ## 1. 請問以下的執行後的值為?
+      // class Person {
+      //   constructor(name) {
+      //     this.name = name;
+      //   }
+      //   getName() {
+      //     return this.name;
+      //   }
+      // }
+      // var Ming = new Person(' 小明 ');
+      // console.log(Ming.__proto__.constructor === Person);
+      // console.log(Ming.__proto__.getName === Person.prototype.getName);
+      // console.log(Ming.__proto__.__proto__ === Object.prototype);
+    </script>
+  </body>
+
+</html>

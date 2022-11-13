@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 30 不使用的記憶體會釋放嗎?
+      // function randomString(length) {
+      //   var result = '';
+      //   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      //   var charactersLength = characters.length;
+      //   for (var i = 0; i < length; i++) {
+      //     result += characters.charAt(Math.floor(Math.random() *
+      //       charactersLength));
+      //   }
+      //   return result;
+      // }
+
+
+      // var demoData = [];
+      // function getData() {
+      //   for (let i = 0; i < 1000; i++) {
+      //     demoData.push(randomString(1000));
+      //   }
+      // }
+      // getData();
+
+
+      // function getData() {
+      //   var demoData = [];
+      //   for (var i = 0; i < 1000; i++) {
+      //     demoData.push(randomString(1000))
+      //   }
+      // }
+      // getData();
+
+
+      // ## 31 什麼是閉包?
+      // function getData() {
+      //   var demoData = [];
+      //   for (var i = 0; i < 1000; i++) {
+      //     demoData.push(randomString(1000))
+      //   }
+      //   setTimeout(function () {
+      //     // 注意:呈現在 Chrome Console 的資料會占用額外記憶體
+      //     // 所以在此不使用 console.log
+      //     // console.log(demoData);
+      //     demoData; // 直接關聯到該變數即可,不需要做額外操作
+      //   }, 10000);
+      // }
+      // getData();
+
+
+      // function storeMoney() {
+      //   var money = 1000;
+      //   return function (price) { // 回傳函式
+      //     money = money + price;
+      //     return money;
+      //   }
+      // }
+      // var myMoney = storeMoney()(100); // 存取內部函式的變數
+      // console.log(myMoney);
+
+
+      // var MingMoney = storeMoney();
+      // console.log(MingMoney(100)); // 1100
+      // console.log(MingMoney(100)); // 1200
+      // console.log(MingMoney(100)); // 1300
+      // var JayMoney = storeMoney();
+      // console.log(JayMoney(0)); // 1000
+      // console.log(JayMoney(500)); // 1500
+      // console.log(JayMoney(100)); // 1600
+
+
+      // ## 閉包的延伸運用,私有方法
+      // function storeMoney(initValue) {
+      //   var money = initValue;
+      //   return {
+      //     increase: function (price) {
+      //       money += price;
+      //     },
+      //     decrease: function (price) {
+      //       money -= price;
+      //     },
+      //     value: function () {
+      //       return money;
+      //     }
+      //   }
+      // }
+      // var MingMoney = storeMoney(100);
+      // MingMoney.increase(100);
+      // MingMoney.decrease(150);
+      // console.log(MingMoney.value()); // 50
+      // var JayMoney = storeMoney(100);
+      // console.log(JayMoney.value()); // 100
+
+
+      // ## 小節測驗
+      // 1. 請問以下程式碼執行後的值為 ?
+      // function myMoney(store) {
+      //   var money = store || 100;
+      //   return {
+      //     add(price) {
+      //       money += price;
+      //     },
+      //     current() {
+      //       return money;
+      //     }
+      //   }
+      // }
+      // var Ming = myMoney().add(100);
+      // console.log(Ming.current());
+    </script>
+  </body>
+
+</html>

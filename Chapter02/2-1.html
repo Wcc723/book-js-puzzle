@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 表達式及陳述式的運用情境
+      // if (condition) {
+      //   statement1
+      // } else {
+      //   statement2
+      // }
+
+
+      // ## 07 什麼是函式陳述式?什麼是函式表達式?
+      // function fn() {
+      //   return true;
+      // };
+
+
+      // (function fn1() {
+      //   return true;
+      // });
+
+
+      // 函式表達式建立以後,將回傳的函式賦予到 fn1 的變數上
+      // var fn1 = function fn1() {
+      //   return true;
+      // };
+
+
+      // if (function fn1() { }) {
+      //   console.log(' 此行是否可以運作?');
+      // }
+
+
+      // ## 08 具名函式與匿名函式有什麼差異?
+      // fn 是宣告變數的名稱,因此此函式稱為具名函式
+      // function fn() {
+      //  return true;
+      // }
+      // // function 後方並沒有名稱,因此稱為匿名函式
+      // var fn1 = function () {
+      //  return true;
+      // };
+
+
+      // nameFn 為此函式表達式的名稱
+      // var fn1 = function nameFn() {
+      // return true;
+      // };
+
+
+      // (function () {
+      //   console.log(' 匿名立即函式 ');
+      // })();
+      // (function namedIIFE() {
+      //   console.log(' 具名立即函式 ');
+      // })();
+
+
+      // ## 小節測驗
+      // if (a = 1) { }; // 1
+      // if (function fn() { }) { }; // 2
+      // if (var a = 1) { }; // 3
+      // if (delete a) { }; // 4
+    </script>
+  </body>
+
+</html>

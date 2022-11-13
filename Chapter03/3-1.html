@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 13 如何區分原始型別與物件型別?
+      // var obj = {
+      //   property: '',
+      // };
+      // obj.name = ' 我是一個物件 ';
+      // console.log(obj.name); // 我是一個物件
+
+
+      // var arr = [1, 2, 3];
+      // arr.name = ' 我是一個陣列 ';
+      // console.log(arr.name); // ' 我是一個陣列 '
+      // console.log(arr); // [1, 2, 3, name: ' 我是一個陣列 ']
+
+
+      // function fn () {}
+      // fn.myName = ' 我是一個函式 '; // 函式本身就有 name 屬性,就別覆蓋它囉
+      // console.log(fn.myName); // ' 我是一個函式 '
+      // console.dir(fn);
+
+
+      // var string = ' 我是小明 ';
+      // string.name = ' 我是字串 ';
+      // console.log(string.name); // undefined
+      // console.log(string); // ' 我是小明 '
+
+
+      // ## 型別判斷方式
+      // console.log(typeof ' 這是一句話 '); // string
+      // console.log(typeof 100); // number
+      // console.log(typeof null); // object。null 會被判斷為 object 物件型別
+      // console.log(typeof undefined); // undefined
+      // console.log(typeof 100n); // bigint。Bigint 會在數值後方增加 n
+      // console.log(typeof Symbol('sym')); // symbol 型別
+      // console.log(typeof {}); // object
+      // console.log(typeof []); // object
+      // console.log(typeof function() {}); // function,但請把它作為 object 型別
+
+
+      // ## 正規表達式
+      // var rule = /ab*c/; // 定義規則
+      // console.log(rule.test('abbbbbbc')); // true,驗證此字串是否符合規則
+      // typeof rule; // 'object'
+
+
+      // ## Primitive Wrapper Objects 原始型別包裹物件
+      // var string = 'my name is ming';
+      // console.log(string.toUpperCase()); // MY NAME IS MING
+
+
+      // var number = 12345;
+      // console.log(number.toUpperCase());
+      // Uncaught TypeError: number.toUpperCase is not a function
+
+
+      // ## 包裹物件作為函式使用
+      // var string = String(12345);
+      // console.log(string.length); // 5,使用 length 檢視字串長度
+
+
+      // ## 包裹物件作為函式建構子使用(實戰中請別這麼做)
+      // var string = new String('my name is ming');
+      // console.log(string.toUpperCase());
+      // console.log(string);
+
+
+      // ## 不能作為函式建構子的包裹物件
+      // var binInt = new BigInt(1); // BigInt is not a constructor
+
+
+      // ## 14 使用 new 運算子建立的字串差異在哪?
+      // var a = new String('1');
+      // typeof a; // 'object'
+
+
+      // var a = new String('1');
+      // var b = new String('1');
+      // console.log(a === b); // false
+
+
+      // ## 小節測驗
+      // const a = new Number(1);
+      // a.myName = ' 這是一個數值 ';
+      // console.log(a.myName);
+    </script>
+  </body>
+
+</html>

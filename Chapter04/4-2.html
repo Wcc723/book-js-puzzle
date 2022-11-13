@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 物件傳址
+      // var a = {};
+      // var b = {};
+      // console.log({} === {}); // false
+
+
+      // var person = ' 小明 ';
+      // person = ' 杰倫 ';
+
+
+      // var person = ' 小明 ';
+      // var person2 = person;
+      // person2 = ' 恩娣 ';
+      // console.log(person === person2); // false
+      // console.log(person, person2); // ' 小明 ' ' 恩娣 '
+
+
+      // ## 物件傳址特性
+      // var person = {
+      //   name: ' 小明 ',
+      // }
+      // var person2 = person;
+      // person2.name = ' 恩娣 ';
+      // console.log(person, person2); // {name: ' 恩娣 '} {name: ' 恩娣 '}
+      // console.log(person === person2); // true
+
+
+      // var person = {
+      //   name: ' 小明 ',
+      // }
+      // var person2 = person;
+      // person2 = {
+      //   name: ' 恩娣 ',
+      // }
+      // console.log(person, person2); // {name: ' 小明 '} {name: ' 恩娣 '}
+      // console.log(person === person2); // false
+
+
+      // ## 20 深層物件的運作也是一樣嗎?
+      // var family = {
+      //   name: ' 小明家 ',
+      //   members: [{
+      //     name: ' 小明 ',
+      //   }, {
+      //     name: ' 媽媽 ',
+      //   }, {
+      //     name: ' 爸爸 ',
+      //   }]
+      // };
+      // var members = family.members;
+      // members.push({ name: ' 恩娣 ' });
+      // console.log(family.members); // [...{ name: ' 恩娣 ' }]
+
+
+      // ## 21 何謂淺層複製?何謂深層複製?
+      // var family = {
+      //   name: ' 小明家 ',
+      //   members: [{
+      //     name: ' 小明 ',
+      //   }]
+      // };
+
+
+      // ## 淺層複製
+      // var copyFamily = Object.assign({}, family); // Object.assign
+      // var copyFamily = { ...family }; // 展開
+
+
+      // console.log(copyFamily === family); // false
+
+
+      // copyFamily.name = ' 小明的新家 ';
+      // console.log(family, copyFamily); // {name: ' 小明家 ', ...}, {name: ' 小明的新家 ', ...}
+
+
+      // copyFamily.members.push({ name: ' 恩娣 ' }); // 原始的深層內容也會受到影響
+      // console.log(family.members); // [{ name: ' 小明 ' }, { name: ' 恩娣 '}]
+
+
+      // ## 深層複製
+      // var deepCopyFamily = JSON.parse(JSON.stringify(family));
+      // deepCopyFamily.members.push({ name: ' 恩娣 ' });
+      // console.log(family.members); // {name: ' 小明 '}
+
+
+      // ## 22 let、const 在物件上的選擇與運用
+      // let myName = ' 小明 ';
+      // myName = ' 恩娣 '; // 不會出現錯誤
+
+
+      // const person = {
+      //   name: ' 小明 ',
+      // }
+      // person.name = ' 恩娣 '; // 如果不會讓原始指向改變,請儘可能使用 const
+
+
+      // let person = {
+      //   name: ' 小明 ',
+      // }
+      // person = {};
+      // person = {
+      //   name: ' 杰倫 ',
+      // }; // 如果會調整變數位址,可使用 let
+
+
+      // ## 23 call by value、call by reference、call by sharing 又代表什麼?
+      // var a = 1;
+      // var b = a;
+      // b = 2;
+      // console.log(a === b); // false
+
+
+      // function updateObj(obj) {
+      //   obj = {
+      //     myName: ' 恩娣 ',
+      //   }
+      // }
+      // var person = { myName: ' 小明 ' };
+      // updateObj(person);
+      // console.log(person.myName); // ' 小明 '
+
+
+      // ## 小節測驗
+      // 1. 請問以下的程式碼執行後的結果為(此題難度極高) ?
+      // var a = { x: 1 };
+      // var b = a;
+      // a.y = a = { x: 2 };
+      // console.log(b, a.y);
+
+
+      // console.log(a === b.y); // true
+    </script>
+  </body>
+
+</html>

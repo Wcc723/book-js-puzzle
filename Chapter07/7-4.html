@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 1. 請問以下的執行順序為?
+      // (() => {
+      //   console.log(1);
+      //   setTimeout(() => {
+      //     console.log(2);
+      //   }, 0);
+      //   (() => {
+      //     console.log(3);
+      //   })();
+      // })();
+
+
+      // ## 2. 請問下述的結果分別為?
+      // function getName() {
+      //   console.log(myName);
+      // }
+      // let myName = ' 小明 ';
+      // setTimeout(() => {
+      //   myName = ' 杰倫 ';
+      //   getName();
+      // }, 0);
+      // getName();
+
+
+      // ## 3. 請問 setTimeout 所需花費的時間?
+      // console.time('setTimeout 時間 ');
+      // setTimeout(() => {
+      //   console.timeEnd('setTimeout 時間 ');
+      // }, 100);
+      // let id = 0
+      // for (let i = 0; i < 100000000; i++) { // 小明要洗很多的餐盤
+      //   id = parseInt(Math.random() * i);
+      // }
+
+
+      // // ※ 以下的題目共用此 promiseFn 函式。
+      // function promiseFn(num) {
+      //   return new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       if (num) {
+      //         resolve('success');
+      //       } else {
+      //         reject('fail');
+      //       }
+      //     }, 0);
+      //   });
+      // }
+
+
+      // ## 4. 請問下述的結果為?
+      // promiseFn(0)
+      //   .then((res) => {
+      //     console.log(1, res);
+      //   }, (err) => {
+      //     console.log(2, err);
+      //   });
+
+
+      // ## 5. 請問上述的執行順序為?
+      // promiseFn(1)
+      //   .then((res) => {
+      //     console.log(1);
+      //     return promiseFn(0);
+      //   })
+      //   .then((res) => {
+      //     console.log(2);
+      //   })
+      //   .catch((err) => {
+      //     console.log(3);
+      //   });
+
+
+      // ## 6. 請問下述的 console.log(res) 結果為?
+      // (async function () {
+      //   const res = await promiseFn(1)
+      //   console.log(1);
+      //   console.log(res);
+      // })();
+      // console.log(2);
+
+
+      // 8. 請問下述的結果為?
+      // (async () => {
+      //   const res = await promiseFn(0)
+      //   console.log(res);
+      // })();
+
+
+      // 9. 請問下述的結果為?
+      // (async () => {
+      //   console.log(1);
+      //   await setTimeout(() => {
+      //     console.log(2);
+      //   }, 0);
+      //   console.log(3);
+      // })();
+
+
+      // 10. 請問下述的結果為?
+      // (async function () {
+      //   return 'success';
+      // })().then((res) => {
+      //   console.log(res);
+      // });
+    </script>
+  </body>
+
+</html>
