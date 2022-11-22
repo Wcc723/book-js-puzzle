@@ -10,16 +10,16 @@
 
   <body>
     <script>
-      // ## 1. 請問下述的結果為?
-      // var myName = ' 小明 ';
+      // ## 1. 請問下述的結果為？
+      // var myName = '小明';
       // (function (fn) {
       //   console.log(fn(myName));
       // })(function () {
-      //   return ' 恩娣 ';
+      //   return '恩娣';
       // });
 
 
-      // ## 2. 請問下述的結果為?
+      // ## 2. 請問下述的結果為？
       // function callSomeone(a, b, fn) {
       //   var result = a + b;
       //   return fn(result);
@@ -51,7 +51,7 @@
       // console.log(fn());
 
 
-      // ##4. 請問下述的結果為?
+      // ## 4. 請問下述的結果為？
       // var fn = function (num) {
       //   return function () {
       //     return num++;
@@ -64,47 +64,47 @@
       // console.log(b());
 
 
-      // ## 5. 請問下述的結果為?
-      // var myName = ' 小明 ';
+      // ## 5. 請問下述的結果為？
+      // var myName = '小明';
       // var obj = {
       //   fn: function () {
-      //     var myName = ' 杰倫 ';
+      //     var myName = '杰倫';
       //     console.log(this.myName);
       //   },
-      //   myName: ' 恩娣 ',
+      //   myName: '恩娣',
       // }
       // obj.fn();
 
 
-      // ## 6. 請問下述的結果為?
-      // var myName = ' 小明 ';
+      // ## 6. 請問下述的結果為？
+      // var myName = '小明';
       // var obj = {
       //   fn: function () {
-      //     var myName = ' 杰倫 ';
+      //     var myName = '杰倫';
       //     setTimeout(function () {
       //       console.log(this.myName);
       //     }, 1);
       //   },
-      //   myName: ' 恩娣 ',
+      //   myName: '恩娣',
       // }
       // obj.fn();
 
 
-      // ## 7. 請問下述的結果為?
-      // var myName = ' 小明 ';
+      // ## 7. 請問下述的結果為？
+      // var myName = '小明';
       // var obj = {
       //   fn: function () {
-      //     var myName = ' 杰倫 ';
+      //     var myName = '杰倫';
       //     setTimeout(() => {
       //       console.log(this.myName);
       //     }, 1);
       //   },
-      //   myName: ' 恩娣 ',
+      //   myName: '恩娣',
       // }
       // obj.fn();
 
 
-      // ## 8. 請問下述的結果為?
+      // ## 8. 請問下述的結果為？
       // var value = 'global';
       // var foo = {
       //   value: 'local',
@@ -115,11 +115,11 @@
       // console.log(foo.bar());
 
 
-      // ## 9. 延續上題,請問以下結果為?
+      // ## 9. 延續上題,請問以下結果為？
       // console.log((foo.fn = foo.bar)());
 
 
-      // ## 10. 請問下述的結果為?
+      // ## 10. 請問下述的結果為？
       // function a(a) {
       //   return a();
       // }

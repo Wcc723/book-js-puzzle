@@ -18,40 +18,40 @@
 
 
       // new Object 的風險
-      // var str = new Object(' 小明 '); // 如果傳入的是純值,會造成建立的是原始型別的物件
-      // console.log(str); // String{' 小明 '}
+      // var str = new Object('小明'); // 如果傳入的是純值,會造成建立的是原始型別的物件
+      // console.log(str); // String{'小明'}
       // var num = new Object(123);
       // console.log(num); // Number{123}
 
 
       // ## 物件的結構
       // var obj = {
-      //   [ 屬性名稱 ]: ' 值 '
+      //   [ 屬性名稱 ]: '值'
       // }
 
 
       // var family = {
       //   // 屬性名稱:值 ,
-      //   name: ' 小明家 ',
+      //   name: '小明家',
       //   deposit: 1000,
       //   members: {
-      //     mom: ' 媽媽 ',
+      //     mom: '媽媽',
       //   },
       //   // 方法
       //   callFamily: function() {
-      //     console.log(' 聯絡小明家 ');
+      //     console.log('聯絡小明家');
       //   },
       // }
 
 
       // ## 點記號
       // var family = {
-      //   name: ' 小明家 ',
+      //   name: '小明家',
       //   members: {
-      //     mom: ' 媽媽 ',
+      //     mom: '媽媽',
       //   },
       //   callFamily: function() {
-      //     console.log(' 聯絡小明家 ');
+      //     console.log('聯絡小明家');
       //   },
       // }
       // // 使用點記號的方式取值
@@ -61,7 +61,7 @@
 
       // var obj = {
       //   1: '1',
-      //   '❤': ' 這是一個 emoji'
+      //   '❤': '這是一個 emoji'
       // }
       // console.log(obj.1); // SyntaxError: missing ) after argument list
       // console.log(obj.❤); // SyntaxError: Invalid or unexpected token
@@ -70,25 +70,25 @@
       // ## 中括號
       // 延續上方的範例
       // var property = 'name';
-      // console.log(family['name']); // ' 小明家 ':使用字串的方式取值
-      // console.log(family[property]); // ' 小明家 ':使用變數的方式取值
-      // console.log(obj['❤']); // ' 這是一個 emoji':使用特殊字元作為字串的方式取值
+      // console.log(family['name']); // '小明家': 使用字串的方式取值
+      // console.log(family[property]); // '小明家': 使用變數的方式取值
+      // console.log(obj['❤']); // '這是一個 emoji': 使用特殊字元作為字串的方式取值
 
 
       // family['callFamily']();
 
 
       // ## 賦予值
-      // family.dog = ' 小白 ';
-      // family['kitten'] = ' 小喵 ';
+      // family.dog = '小白';
+      // family['kitten'] = '小喵';
 
 
       // ## 18 物件內的「屬性名稱」,可以使用數字或其他特殊字元嗎?
       // var property = 'newName';
       // var family = {
       //   1: '1', // 數字則會被判別為字串
-      //   小明家 : ' 小明家字串 ', // 中文字
-      //   '❤': ' 這是一個 emoji',
+      //   小明家 : '小明家字串', // 中文字
+      //   '❤': '這是一個 emoji',
       //   [property]: ' 新的 name 字串 ',
       // }
 
@@ -97,8 +97,8 @@
       // console.log(family['1']); // 1
 
 
-      // console.log(family. 小明家 ); // ' 小明家字串 '
-      // console.log(family[' 小明家 ']); // ' 小明家字串 '
+      // console.log(family. 小明家 ); // '小明家字串'
+      // console.log(family['小明家']); // '小明家字串'
       // console.log(family[property]); // ' 新的 name 字串 '
       // console.log(family['❤']); // Emoji 存取值的方式
 
@@ -106,8 +106,8 @@
       // ## 19 如何避免物件內的空屬性,導致無法取得深層值?
       // var family = {
       //   members: {
-      //     mom: ' 媽媽 ',
-      //     ming: ' 小明 ',
+      //     mom: '媽媽',
+      //     ming: '小明',
       //   }
       // };
       // console.log(family.someProperty); // undefined
@@ -123,14 +123,14 @@
 
       // ## 方法二:可選串連
       // console.log(family?.member?.mom); // undefined
-      // console.log(family?.members?.mom); // ' 媽媽 '
+      // console.log(family?.members?.mom); // '媽媽'
 
 
       // ## 小節測驗
       // var arr = [1, 'name', '💔'];
       // var obj = {
       // '1': ' 數值 1',
-      // 'name': ' 小明 ',
+      // 'name': '小明',
       // '💯': '100 分 '
       // }
       // arr.forEach(function(item) {

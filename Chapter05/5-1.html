@@ -12,15 +12,15 @@
     <script>
       // ## 建立函式
       // function callText(text) {
-      //   console.log(` 這是一個 ${text}`); // ' 這是一個函式陳述式 '
+      //   console.log(`這是一個 ${text}`); // '這是一個函式陳述式'
       // }
-      // callText(' 函式陳述式 ');
+      // callText('函式陳述式');
 
 
       // var callText = function (text) {
-      //   console.log(` 這是一個 ${text}`); // ' 這是一個函式表達式 '
+      //   console.log(`這是一個 ${text}`); // '這是一個函式表達式'
       // }
-      // callText(' 函式表達式 ');
+      // callText('函式表達式');
 
 
       // function sum(a, b) {
@@ -36,20 +36,20 @@
       // }
       // var result = fn(1, 1);
       // console.log(result); // undefined
-      // 當函式沒有 return,則會回傳 undefined
+      // 當函式沒有 return，則會回傳 undefined
 
 
       // ## 27 立即函式是什麼以及有什麼用處?
       // (function () {
-      //   console.log(' 這是立即函式 ');
+      //   console.log('這是立即函式');
       // })(); // 執行的括號在外側
       // (function () {
-      //   console.log(' 這是立即函式 ');
+      //   console.log('這是立即函式');
       // }()); // 執行的括號在內側
 
 
       // (() => {
-      //   console.log(' 這是使用箭頭函式撰寫的立即函式 ');
+      //   console.log('這是使用箭頭函式撰寫的立即函式');
       // })();
 
 
@@ -63,12 +63,12 @@
 
 
       // (function () {
-      //   var myName = ' 小明 ';
+      //   var myName = '小明';
       // })();
       // console.log(myName); // 無法取得立即函式內的值
 
 
-      // ## 範例一:函式就像變數一樣,作為參數傳遞
+      // ## 範例一: 函式就像變數一樣，作為參數傳遞
       // function callMing() {
       //   return '小明, ';
       // }
@@ -77,7 +77,7 @@
       //   console.log(fn() + someText);
       // }
 
-      // greeting(callMing, '吃飯了沒～'); // '小明, 吃飯了沒～ '
+      // greeting(callMing, '吃飯了沒～'); // '小明, 吃飯了沒～'
 
 
       // ## 範例二:函式作為回傳值使用
@@ -87,10 +87,10 @@
       //     console.log(`${myName}, 你好啊∼`);
       //   }
       // }
-      // var callMing = callSomeone(' 小明 ');
+      // var callMing = callSomeone('小明');
       // console.log(callMing); // 這是 callSomeone 所回傳的函式表達式
       // callMing(); // " 小明 , 你好啊∼"
-      // var callJay = callSomeone(' 杰倫 ');
+      // var callJay = callSomeone('杰倫');
       // callJay(); // " 杰倫 , 你好啊∼"
 
 
@@ -136,7 +136,7 @@
 
       // ## 小節測驗
       // 1. 請問以下程式碼執行後的值為 ?
-      // var myName = ' 小明 ';
+      // var myName = '小明';
       // var fn = (function () {
       //   return function () {
       //     return myName;

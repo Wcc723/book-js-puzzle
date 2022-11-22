@@ -13,21 +13,21 @@
       // ## 40 如何將 function 函式建構子改為 class 的寫法
       // class Animal {
       //   constructor(family) {
-      //     this.basic = ' 有眼睛、嘴巴 ';
-      //     this.family = family || ' 人科 ';
+      //     this.basic = '有眼睛、嘴巴';
+      //     this.family = family || '人科';
       //   }
       //   move() {
-      //     console.log(`${this.name} 移動 `);
+      //     console.log(`${this.name} 移動`);
       //   }
       // }
-      // const human = new Animal(' 人科 '); // 建立物種方式與先前一樣
-      // human.move(); // undefined 移動,雖然可以呼叫方法,但該物種還沒有名字
-      // console.log(human); // 雖然建立方式不同,但結果與 Function 函式建構子接近
+      // const human = new Animal('人科'); // 建立物種方式與先前一樣
+      // human.move(); // undefined 移動,雖然可以呼叫方法，但該物種還沒有名字
+      // console.log(human); // 雖然建立方式不同，但結果與 Function 函式建構子接近
 
 
       // class Dog extends Animal {
       //   constructor(name, color, size) {
-      //     super(' 狗科 '); // call Animal constructor
+      //     super('狗科'); // call Animal constructor
       //     this.name = name;
       //     this.color = color;
       //     this.size = size;
@@ -36,7 +36,7 @@
       //     console.log(`${this.name} 吠叫 `);
       //   }
       // }
-      // const Bibi = new Dog(' 比比 ', ' 棕色 ', ' 小 ');
+      // const Bibi = new Dog('比比', '棕色', '小');
       // console.log(Bibi);
       // Bibi.bark();
       // Bibi.move();
@@ -53,8 +53,8 @@
       //     super(d);
       //   }
       //   getLocalDate() {
-      //     const months = [' 一月 ', ' 二月 ', ' 三月 ', ' 四月 ', ' 五月 ', ' 六月 ',
-      //       ' 七月 ', ' 八月 ', ' 九月 ', ' 十月 ', ' 十一月 ', ' 十二月 '];
+      //     const months = ['一月', '二月', '三月', '四月', '五月', '六月',
+      //       '七月', '八月', '九月', '十月', '十一月', '十二月'];
       //     return ` 西元 ${this.getFullYear() - 1911} 年 ${months[this.getMonth()]} ${this.getDate()} 日 `;
       //   }
       // }
@@ -73,7 +73,7 @@
       //     return this.name;
       //   }
       // }
-      // var Ming = new Person(' 小明 ');
+      // var Ming = new Person('小明');
       // console.log(Ming.__proto__.constructor === Person);
       // console.log(Ming.__proto__.getName === Person.prototype.getName);
       // console.log(Ming.__proto__.__proto__ === Object.prototype);

@@ -10,7 +10,7 @@
 
   <body>
     <script>
-      // ## 1. 請問以下的執行順序為?
+      // ## 1. 請問以下的執行順序為？
       // (() => {
       //   console.log(1);
       //   setTimeout(() => {
@@ -22,20 +22,20 @@
       // })();
 
 
-      // ## 2. 請問下述的結果分別為?
+      // ## 2. 請問下述的結果分別為？
       // function getName() {
       //   console.log(myName);
       // }
-      // let myName = ' 小明 ';
+      // let myName = '小明';
       // setTimeout(() => {
-      //   myName = ' 杰倫 ';
+      //   myName = '杰倫';
       //   getName();
       // }, 0);
       // getName();
 
 
       // ## 3. 請問 setTimeout 所需花費的時間?
-      // console.time('setTimeout 時間 ');
+      // console.time('setTimeout 時間');
       // setTimeout(() => {
       //   console.timeEnd('setTimeout 時間 ');
       // }, 100);
@@ -59,7 +59,7 @@
       // }
 
 
-      // ## 4. 請問下述的結果為?
+      // ## 4. 請問下述的結果為？
       // promiseFn(0)
       //   .then((res) => {
       //     console.log(1, res);
@@ -68,7 +68,7 @@
       //   });
 
 
-      // ## 5. 請問上述的執行順序為?
+      // ## 5. 請問上述的執行順序為？
       // promiseFn(1)
       //   .then((res) => {
       //     console.log(1);
@@ -82,7 +82,7 @@
       //   });
 
 
-      // ## 6. 請問下述的 console.log(res) 結果為?
+      // ## 6. 請問下述的 console.log(res) 結果為？
       // (async function () {
       //   const res = await promiseFn(1)
       //   console.log(1);
@@ -91,14 +91,14 @@
       // console.log(2);
 
 
-      // 8. 請問下述的結果為?
+      // 8. 請問下述的結果為？
       // (async () => {
       //   const res = await promiseFn(0)
       //   console.log(res);
       // })();
 
 
-      // 9. 請問下述的結果為?
+      // 9. 請問下述的結果為？
       // (async () => {
       //   console.log(1);
       //   await setTimeout(() => {
@@ -108,7 +108,7 @@
       // })();
 
 
-      // 10. 請問下述的結果為?
+      // 10. 請問下述的結果為？
       // (async function () {
       //   return 'success';
       // })().then((res) => {

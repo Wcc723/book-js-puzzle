@@ -18,9 +18,9 @@
       //   this.name = name;
       // }
       // Person.prototype.run = function () {
-      //   return `${this.name} 快跑啊 `;
+      //   return `${this.name} 快跑啊`;
       // }
-      // var Ming = new Person(' 小明 ');
+      // var Ming = new Person('小明');
       // console.log(Ming);
 
 
@@ -28,34 +28,34 @@
       // var person = {};
       // 目標物件 , 屬性名稱 , 特徵
       // Object.defineProperty(person, 'name', {
-      //   value: ' 小明 ',
+      //   value: '小明',
       // });
-      // console.log(person); // {name: ' 小明 '}
+      // console.log(person); // {name: '小明'}
 
 
       // ## writable
       // var person = {};
       // Object.defineProperty(person, 'name', {
-      //   value: ' 小明 ',
+      //   value: '小明',
       //   writable: false, // 不可寫入
       // });
-      // person.name = ' 恩娣 ';
-      // console.log(person); // {name: ' 小明 '}
+      // person.name = '恩娣';
+      // console.log(person); // {name: '小明'}
 
 
       // (() => {
       //   'use strict';
-      //   person.name = ' 杰倫 '; // Uncaught TypeError: Cannot assign to read only property 'name' of object '#<Object>'
+      //   person.name = '杰倫'; // Uncaught TypeError: Cannot assign to read only property 'name' of object '#<Object>'
       // })();
 
 
       // ## configurable
       // Object.defineProperty(person, 'name', {
-      //   value: ' 小明 ',
+      //   value: '小明',
       //   configurable: false, // 不可刪除
       // });
       // delete person.name;
-      // console.log(person); // {name: ' 小明 '}
+      // console.log(person); // {name: '小明'}
       // (() => {
       //   'use strict';
       //   delete person.name; // Uncaught TypeError: Cannot delete property 'name' of #<Object>
@@ -63,7 +63,7 @@
 
       // ## enumerable
       // Object.defineProperty(person, 'name', {
-      //   value: ' 小明 ',
+      //   value: '小明',
       //   enumerable: false, // 不可列舉
       // });
       // console.log(Object.keys(person)); // []:空陣列,沒有任何內容
@@ -72,18 +72,18 @@
       // }
 
 
-      // person.property = ' 這是一般屬性 ';
+      // person.property = '這是一般屬性';
       // console.log(person);
 
 
-      // ## 38 原型方法使用 for⋯in 可能會發生什麼狀況?
+      // ## 38 原型方法使用 for...in 可能會發生什麼狀況?
       // function Person(name) {
       //   this.name = name;
       // }
       // Person.prototype.run = function () {
-      //   return `${this.name} 快跑啊 `;
+      //   return `${this.name} 快跑啊`;
       // }
-      // var Ming = new Person(' 小明 ');
+      // var Ming = new Person('小明');
       // console.log(Ming);
       // for (const key in Ming) {
       //   console.log(key);

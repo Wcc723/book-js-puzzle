@@ -10,29 +10,29 @@
 
   <body>
     <script>
-      // ## 42 什麼是單執行緒?
-      // console.time(' 早安 ');
+      // ## 42 什麼是單執行緒？
+      // console.time('早安');
       // function eatBreakfast() {
-      //   console.log(' 吃早餐 ');
+      //   console.log('吃早餐');
       // }
       // function doTheDishes() {
-      //   console.log(' 洗餐盤 ');
+      //   console.log('洗餐盤');
       // }
       // function callSomeone(someone) {
-      //   console.log(' 打給 ' + someone)
+      //   console.log('打給' + someone)
       // }
       // (function goodMorning() {
       //   eatBreakfast();
       //   doTheDishes();
-      //   callSomeone(' 恩娣 ');
+      //   callSomeone('恩娣');
       // })();
-      // console.timeEnd(' 早安 ');
+      // console.timeEnd('早安');
 
 
-      // console.time(' 早安 ');
+      // console.time('早安');
       // // ...eatBreakfast 的函式
       // function doTheDishes() {
-      //   console.log(' 洗餐盤 ');
+      //   console.log('洗餐盤');
       //   let dishId = 0;
       //   for (let i = 0; i < 1000000; i++) { // 小明要洗很多的餐盤
       //     dishId = parseInt(Math.random() * i);
@@ -43,25 +43,25 @@
       // (function goodMorning() {
       //   eatBreakfast();
       //   doTheDishes();
-      //   callSomeone(' 恩娣 ');
+      //   callSomeone('恩娣');
       // })();
-      // console.timeEnd(' 早安 ');
+      // console.timeEnd('早安');
 
 
-      // ## 43 同步語言是什麼?
+      // ## 43 同步語言是什麼？
       // function callMe(name) {
-      //   alert(` 嘿,${name}`);
+      //   alert(`嘿,${name}`);
       // }
-      // callMe(' 小明 ');
-      // console.log(' 小明 ');
+      // callMe('小明');
+      // console.log('小明');
 
 
-      // ## 44 什麼是執行堆疊?
+      // ## 44 什麼是執行堆疊？
       // function callContext(params) {
       //   console.log(params);
       //   debugger;
       // }
-      // callContext(' 小明 ');
+      // callContext('小明');
 
 
       // function includingTax(price) {
@@ -77,64 +77,64 @@
       // sum(1000);
 
 
-      // ## 45 什麼是 Event Queue?
-      // console.time(' 早安 ');
+      // ## 45 什麼是 Event Queue？
+      // console.time('早安');
       // function eatBreakfast() {
-      //   console.log(' 吃早餐 '); // console 位置 1
+      //   console.log('吃早餐'); // console 位置 1
       // }
 
       // function doTheDishes() {
-      //   console.log(' 洗餐盤 '); // console 位置 2
+      //   console.log('洗餐盤'); // console 位置 2
       // }
       // function callSomeone(someone) {
       //   setTimeout(() => {
-      //     console.log(someone + ' 回電 '); // console 位置 3
+      //     console.log(someone + '回電'); // console 位置 3
       //   }, 500);
       // }
       // (function goodMorning() {
       //   // 執行順序為:1. 吃早餐 →2. 打電話 →3. 洗碗
       //   eatBreakfast();
-      //   callSomeone(' 恩娣 ');
+      //   callSomeone('恩娣');
       //   doTheDishes();
       // })();
-      // console.timeEnd(' 早安 '); // console 位置 4
+      // console.timeEnd('早安'); // console 位置 4
 
 
-      // console.time(' 早安 ');
+      // console.time('早安');
       // function eatBreakfast() {
-      //   console.log(' 吃早餐 ');
+      //   console.log('吃早餐');
       // }
       // function doTheDishes() {
       //   let dishId = 0;
       //   for (let i = 0; i < 200000000; i++) { // 小明要洗很多的碗
       //     dishId = parseInt(Math.random() * i);
       //   }
-      //   console.log(' 洗餐盤 ');
+      //   console.log('洗餐盤');
       // }
       // function callSomeone(someone) {
       //   setTimeout(() => {
-      //     console.log(someone + ' 回電 ');
+      //     console.log(someone + '回電');
       //   }, 0);
       // }
       // (function goodMorning() {
       //   eatBreakfast();
-      //   callSomeone(' 恩娣 ');
+      //   callSomeone('恩娣');
       //   doTheDishes();
       // })();
-      // console.timeEnd(' 早安 ');
+      // console.timeEnd('早安');
 
 
       // ## 同步語言與事件佇列
       // eatBreakfast();
-      // callSomeone(' 恩娣 ');
+      // callSomeone('恩娣');
       // doTheDishes();
 
 
       // function callSomeone(someone) {
-      //   console.time(' 打給恩娣 ');
+      //   console.time('打給恩娣');
       //   setTimeout(() => {
-      //     console.log(someone + ' 回電 ');
-      //     console.timeEnd(' 打給恩娣 ');
+      //     console.log(someone + '回電');
+      //     console.timeEnd('打給恩娣');
       //   }, 0);
       // }
 

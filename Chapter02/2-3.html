@@ -11,17 +11,17 @@
   <body>
     <script>
       // ## 10 什麼是運算子?
-      // typeof 是 運算子,而 ' 小明 ' 是運算元
-      // typeof ' 小明 '; // 回傳 'string'
+      // typeof 是 運算子，而 '小明' 是運算元
+      // typeof '小明'; // 回傳 'string'
 
 
-      // myName = ' 小明 ';
+      // myName = '小明';
       // delete window.myName; // 回傳 true
 
 
       // const hungry = true;
-      // const result = hungry ? ' 去吃東西吧 ' : ' 還不餓,免了 ';
-      // console.log(result); // ' 去吃東西吧 '
+      // const result = hungry ? '去吃東西吧' : '還不餓，免了';
+      // console.log(result); // '去吃東西吧'
 
 
       // ## 運算子的先賦值後回傳 VS 先回傳後賦值
@@ -59,23 +59,23 @@
 
 
       // const person = {
-      //   myName: ' 小明 ',
+      //   myName: '小明',
       // }
       // Object.freeze(person);
-      // person.myName = ' 恩娣 ';
-      // console.log(person.myName); // person.myName 的值依然是 ' 小明 '
+      // person.myName = '恩娣';
+      // console.log(person.myName); // person.myName 的值依然是 '小明'
 
 
       // const person = {
-      //   myName: ' 小明 ',
+      //   myName: '小明',
       // }
       // Object.freeze(person);
-      // const newName = person.myName = ' 恩娣 ';
+      // const newName = person.myName = '恩娣';
 
 
       // ## 連續賦值的另一個問題
       // (function () {
-      //   const a = b = ' 小明 ';
+      //   const a = b = '小明';
       // })();
       // console.log(b); // 全域
 

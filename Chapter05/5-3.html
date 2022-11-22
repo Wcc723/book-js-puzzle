@@ -20,11 +20,11 @@
       //   );
       //   debugger; // 除錯模式
       // }
-      // callName(' 恩娣 ');
+      // callName('恩娣');
 
 
       // ## 全域環境下
-      // var myName = ' 小明 ';
+      // var myName = '小明';
       // console.log(this === window); // true
       // console.log(this.myName); // 小明
 
@@ -48,8 +48,8 @@
       // function MyFamily(name) {
       //   this.myName = name;
       // }
-      // var myFamily = new MyFamily(' 小明 '); // 產生新的物件
-      // console.log(myFamily); // {myName: ' 小明 '}
+      // var myFamily = new MyFamily('小明'); // 產生新的物件
+      // console.log(myFamily); // {myName: '小明'}
 
 
       // ## class
@@ -62,66 +62,66 @@
       //   callSomeone() { }
       //   static hello() { } // 靜態方法不包含在 this 中
       // }
-      // var myFamily = new MyFamily(' 小明 ');
+      // var myFamily = new MyFamily('小明');
       // console.log(myFamily); // 包含 myName、callSomeone 屬性
 
 
       // ## call、apply、bind
       // var Jay = {
-      //   myName: ' 杰倫 '
+      //   myName: '杰倫'
       // }
       // var Ming = {
-      //   myName: ' 小明 '
+      //   myName: '小明'
       // }
       // function callSomeone(text1, text2) {
       //   console.log(this.myName, text1, text2);
       // }
-      // callSomeone.call(Jay, ' 你好 ', ' 早安 '); // 杰倫 你好 早安
-      // callSomeone.apply(Jay, [' 你好 ', ' 早安 ']); // 杰倫 你好 早安
-      // callSomeone.call(Ming, ' 你好 ', ' 早安 '); // 小明 你好 早安
+      // callSomeone.call(Jay, '你好', '早安'); // 杰倫 你好 早安
+      // callSomeone.apply(Jay, ['你好', '早安']); // 杰倫 你好 早安
+      // callSomeone.call(Ming, '你好', '早安'); // 小明 你好 早安
 
 
       // var Ming = {
-      //   myName: ' 小明 '
+      //   myName: '小明'
       // }
       // function callSomeone(text1, text2) {
       //   console.log(this.myName, text1, text2);
       // }
-      // var newCall = callSomeone.bind(Ming, ' 你好 ', ' 早安 ');
+      // var newCall = callSomeone.bind(Ming, '你好', '早安');
       // var newCall2 = callSomeone.bind(Ming); // 也可不傳入參數,在後續呼叫時才傳入
       // newCall(); // 小明 你好 早安
-      // newCall2(' 開心 ', ' 美好 '); // 小明 開心 美好
+      // newCall2('開心', '美好'); // 小明 開心 美好
 
 
       // ## 物件下的方法
-      // var myName = ' 全域的小明 ';
+      // var myName = '全域的小明';
       // function callName() {
       //   console.log(this.myName);
       // }
-      // callName(); // ' 全域的小明 '
+      // callName(); // '全域的小明'
 
 
       // var family = {
-      //   myName: ' 小明家 ',
+      //   myName: '小明家',
       //   callName: function () {
-      //     console.log(this.myName); // ' 小明家 '
+      //     console.log(this.myName); // '小明家'
       //   }
       // }
       // family.callName();
 
 
       // var family = {
-      //   myName: ' 小明家 ',
+      //   myName: '小明家',
       //   callName: callName // 使用全域定義的函式
       // }
       // family.callName(); // 小明家
 
 
       // var family = {
-      //   myName: ' 小明家 ',
+      //   myName: '小明家',
       //   callName: callName,
       //   Ming: {
-      //     myName: ' 小明 ',
+      //     myName: '小明',
       //     callName: callName
       //   }
       // }
@@ -130,12 +130,12 @@
 
 
       // var person = {
-      //   myName: ' 小明 ',
+      //   myName: '小明',
       //   cash: 1000,
-      //   backpack: [' 水壺 '],
+      //   backpack: ['水壺'],
       //   buy: function (item, price) {
-      //     console.log(`${this.myName} 買了 "${item}",並放到背包裡 `);
-      //     // 小明買了 " 玩偶 ",並放到背包裡
+      //     console.log(`${this.myName} 買了 "${item}"，並放到背包裡 `);
+      //     // 小明買了 " 玩偶 "，並放到背包裡
       //     this.backpack.push(item);
       //     this.updateCash(-price);
       //   },
@@ -145,18 +145,18 @@
       //     // 小明現在剩下 700 元
       //   }
       // }
-      // person.buy(' 玩偶 ', 300);
+      // person.buy('玩偶', 300);
 
 
       // ## 'use strict' 是什麼?
       // 'use strict';
-      // auntie = ' 恩娣 ';
+      // auntie = '恩娣';
       // Uncaught ReferenceError: auntie is not defined
 
 
       // (function () {
       //   'use strict';
-      //   // auntie = ' 恩娣 '; // 此行會出現錯誤
+      //   // auntie = '恩娣'; // 此行會出現錯誤
       //   // Uncaught ReferenceError: auntie is not defined
       // })();
       // mom = ' 老媽管不到 '; // 不會跳錯
@@ -170,13 +170,13 @@
 
       // ## 小節測驗
       // 1. 請問以下程式碼執行後的值為?
-      // var myName = ' 小明 ';
+      // var myName = '小明';
       // var obj = {
       //   fn: function () {
-      //     myName = ' 杰倫 ';
+      //     myName = '杰倫';
       //     console.log(this.myName);
       //   },
-      //   myName: ' 恩娣 ',
+      //   myName: '恩娣',
       // };
       // obj.fn();
     </script>
