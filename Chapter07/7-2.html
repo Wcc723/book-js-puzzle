@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'
+      integrity='sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=='
+      crossorigin='anonymous'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      // ## Promise
+      // 定義非同步函式
+      // function asyncFunction(fn) {
+      //   setTimeout(fn, 1000);
+      // }
+      // asyncFunction(function () {
+      //   console.log(' 執行第一次 ');
+      //   asyncFunction(function () {
+      //     console.log(' 執行第二次 ');
+      //     asyncFunction(function () {
+      //       console.log(' 執行第三次 ');
+      //     });
+      //   });
+      // });
+
+
+      // $.get({
+      //   url: 'https://randomuser.me/api/',
+      //   dataType: 'json',
+      //   success: function (data) {
+      //     console.log(1, data);
+      //     // 1. 回應使用 $.get 請求物件內的 success 方法取得
+      //   }
+      // });
+      // $.get({
+      //   url: 'https://randomuser.me/api/',
+      //   dataType: 'json',
+      // }).done(function (data) {
+      //   console.log(2, data);
+      //   // 回應使用 $.get 後的 .done 方法取得
+      // });
+      // $.get({
+      //   url: 'https://randomuser.me/api/',
+      //   dataType: 'json',
+      // }, function (data) {
+      //   console.log(3, data);
+      //   // 回應使用 $.get 的 callback function 取得
+      // });
+
+
+      // ## Promise 如何運作
+      // const p = new Promise();
+      // p.then(); // Promise 回傳正確
+      // p.catch(); // Promise 回傳失敗
+      // p.finally(); // 非同步執行完畢( 無論是否正確完成 )
+
+
+      // new Promise(function (resolve, reject) {
+      //   resolve(); // 正確完成的回傳方法
+      //   reject(); // 失敗的回傳方法
+      // });
+
+
+      // ## 狀態
+      // function promise() {
+      //   return new Promise((resolve, reject) => { });
+      // }
+      // console.dir(promise());
+
+
+      // function promise() {
+      //   return new Promise((resolve, reject) => { reject(' 失敗 '); });
+      // }
+      // console.dir(promise());
+
+
+      // ## 建立自己的 Promise
+      // function promise() {
+      //   return new Promise((resolve, reject) => {
+      //     // 隨機取得 0 or 1
+      //     const num = Math.random() > 0.5 ? 1 : 0;
+      //     // 1 則執行 resolve,否則執行 reject
+      //     if (num) {
+      //       resolve(' 成功 ');
+      //     }
+      //     reject(' 失敗 ')
+      //   });
+      // }
+
+
+      // promise.then(onFulfilled, onRejected);
+      // 前者為 resolve callback,後者則為 reject
+      // promise()
+      //   .then((success) => {
+      //     console.log(success);
+      //   }, (fail) => {
+      //     console.log(fail);
+      //   })
+
+
+      // promise.then(onFulfilled);
+      // promise.catch(onRejected)
+      // promise()
+      //   .then(success => {
+      //     console.log(success);
+      //   })
+      //   // 失敗的行為一律交給了 catch
+      //   .catch(fail => {
+      //     console.log(fail);
+      //   });
+
+
+      // ## 鏈接
+      // function promise(num) {
+      //   return new Promise((resolve, reject) => {
+      //     num ? resolve(`${num}, 成功 `) : reject(' 失敗 ');
+      //   });
+      // }
+
+
+      // promise(1)
+      //   .then(success => {
+      //     console.log(success);
+      //     return promise(2); // 進入下一個 then
+      //   })
+      //   .then(success => {
+      //     console.log(success);
+      //     return promise(0); // 這個階段會進入 catch
+      //   })
+      //   .then(success => { // 由於上一個階段結果是 reject,所以此段不執行
+      //     console.log(success);
+      //     return promise(3);
+      //   })
+      //   .catch(fail => { // 接收 promise(0) 的 reject 結果
+      //     console.log(fail);
+      //   })
+
+
+      // ## Promise 物件方法
+      // function promise(num, time = 500) {
+      //   return new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       num ? resolve(`${num}, 成功 `) : reject(' 失敗 ');
+      //     }, time);
+      //   });
+      // }
+
+
+      // ## Promise.all
+      // Promise.all([promise(1), promise(2), promise(3, 3000)])
+      //   .then(res => {
+      //     console.log(res);
+      //   });
+
+
+      // ## Promise.race
+      // Promise.race([promise(1), promise(2), promise(3, 3000)]).then(res => {
+      //   console.log(res);
+      // });
+
+
+      // // ## Fetch
+      // fetch('https://randomuser.me/api/')
+      //   .then((res) => {
+      //     console.log(res);
+      //     // 接收到 Response 物件
+      //   });
+
+
+      // fetch('https://randomuser.me/api/')
+      //   .then((res) => {
+      //     console.log(res);
+      //     return res.json(); // .json() 方法屬於 Promise
+      //   })
+      //   .then((json) => {
+      //     console.log(json);
+      //   });
+
+
+      // ## Axios
+      // axios('https://randomuser.me/api/')
+      //   .then((json) => {
+      //     console.log(json);
+      //     // 已取得完整遠端 JSON 資料
+      //   });
+
+
+      // ## Promise 物件方法
+      // Promise.all([
+      //   axios('https://randomuser.me/api/?seed=1'),
+      //   axios('https://randomuser.me/api/?seed=2'),
+      //   axios('https://randomuser.me/api/?seed=3'),
+      // ]).then((res) => {
+      //   // 回傳的是三個請求結果
+      //   console.log(res);
+      // });
+
+
+      // Promise.all([
+      //   fetch('https://randomuser.me/api/?seed=1'),
+      //   fetch('https://randomuser.me/api/?seed=2'),
+      //   fetch('https://randomuser.me/api/?seed=3'),
+      // ])
+      //   .then((responses) => {
+      //     // 回傳的是三個 Response 物件,需要使用 .json() 語法將其轉為 JSON。
+      //     console.log(responses);
+      //     return Promise.all(responses.map((res) => res.json()));
+      //   })
+      //   .then((jsonArray) => {
+      //     console.log('fetch jsonArray:', jsonArray);
+      //   });
+
+
+      // Axios 與 Fetch 的錯誤捕捉
+      // fetch('https://randomuser.me/ap')
+      //   .then((err) => {
+      //     console.log(err);
+      //     return err.text();
+      //   })
+      //   .then((text) => {
+      //     console.log(text);
+      //   });
+
+
+      // axios('https://randomuser.me/ap')
+      //   .then((res) => { // .then 流程會被跳過
+      //     console.log(res);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+
+
+      // ## 小節測驗
+      // ## 1. 請問以下的執行後的值為?
+      // function promiseFn(num) {
+      //   return new Promise((resolve, reject) => {
+      //     if (num) {
+      //       resolve('success');
+      //     }
+      //   });
+      // }
+      // promiseFn(0).then(res => {
+      //   console.log(res);
+      // });
+    </script>
+  </body>
+
+</html>

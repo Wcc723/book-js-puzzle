@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 原型鏈
+      // var dog = {
+      //   // 動物特徵:有眼睛、鼻子、嘴巴 ...
+      //   mouth: true,
+      //   // 狗共通能力
+      //   bark: function () {
+      //     console.log(' 汪 ');
+      //   },
+      //   // 可自訂的特徵
+      //   color: 'white',
+      //   name: ' 比比 '
+      // }
+
+
+      // 34 什麼是原型鏈?哪裡可以看到原型?
+      // var arr = [1, 2, 3];
+      // console.log(arr);
+
+
+      // console.log(arr.concat([4, 5, 6])); // [1, 2, 3, 4, 5, 6]
+
+
+      // function argFn() {
+      //   console.log(arguments); // arguments 沒有 forEach 的原型
+      //   // Uncaught TypeError: arguments.forEach is not a function
+      //   arguments.forEach((item) => {
+      //     console.log(item);
+      //   });
+      // }
+      // argFn(1, 2, 3);
+
+
+      // 可先在 HTML 網頁上加入多個 p 元素
+      // document.querySelectorAll('p').forEach(item => {
+      //   console.log(item); // 可正確執行
+      // });
+      // function argFn() {
+      //   console.log(arguments); // arguments 沒有 forEach 的原型
+      //   // Uncaught TypeError: arguments.forEach is not a function
+      //   arguments.forEach((item) => {
+      //     console.log(item);
+      //   });
+      // }
+      // argFn(1, 2, 3);
+
+
+      // 原型是共用的
+      // var arr = [1, 2, 3];
+      // arr.__proto__.getLast = function () {
+      //   return this[this.length - 1];
+      // }
+      // console.log(arr.getLast()); // 3
+
+
+      // var arr2 = [4, 5, 6];
+      // console.log(arr2.getLast()); // 6
+      // console.log(arr, arr2); // 兩個陣列的 [[Prototype]] 中都能找到 getLast 的方法
+    </script>
+  </body>
+
+</html>

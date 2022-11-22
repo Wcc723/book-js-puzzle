@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 10 什麼是運算子?
+      // typeof 是 運算子,而 ' 小明 ' 是運算元
+      // typeof ' 小明 '; // 回傳 'string'
+
+
+      // myName = ' 小明 ';
+      // delete window.myName; // 回傳 true
+
+
+      // const hungry = true;
+      // const result = hungry ? ' 去吃東西吧 ' : ' 還不餓,免了 ';
+      // console.log(result); // ' 去吃東西吧 '
+
+
+      // ## 運算子的先賦值後回傳 VS 先回傳後賦值
+      // var a = 1;
+      // console.log(a + 1);
+      // console.log(a); // 原始值為 1 不變化
+
+
+      // var a = 1;
+      // console.log(++a); // 2
+      // console.log(a); // a 值被賦予為 2
+
+
+      // var a = 1;
+      // console.log(a++); // 1
+      // console.log(a); // a 值被賦予為 2
+
+
+      // ++ 在前的結果
+      // var a = 1;
+      // var b = ++a * 10;
+      // console.log(b); // 20
+
+
+      // ++ 在後的結果
+      // var a = 1;
+      // var b = 10 * a++;
+      // console.log(b); // 10
+
+
+      // ## 回傳值不一定等同於賦值
+      // a = 1
+      // 將右側的 1 賦予到左側的 a 上會回傳 1 的結果
+      // 大多情況下 a 的值會等同於數字 1
+
+
+      // const person = {
+      //   myName: ' 小明 ',
+      // }
+      // Object.freeze(person);
+      // person.myName = ' 恩娣 ';
+      // console.log(person.myName); // person.myName 的值依然是 ' 小明 '
+
+
+      // const person = {
+      //   myName: ' 小明 ',
+      // }
+      // Object.freeze(person);
+      // const newName = person.myName = ' 恩娣 ';
+
+
+      // ## 連續賦值的另一個問題
+      // (function () {
+      //   const a = b = ' 小明 ';
+      // })();
+      // console.log(b); // 全域
+
+
+      // ## 小節測驗
+      // var a = 10;
+      // console.log(++a * a);
+      // console.log(a);
+    </script>
+  </body>
+
+</html>

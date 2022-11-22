@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 1. 請問下述的結果為 ?
+      // function Person(name) {
+      //   this.name = name
+      // }
+      // Person.__proto__.getName = function () {
+      //   return `${this.name} 你好 `;
+      // }
+      // var Ming = new Person(' 小明 ');
+      // console.log(Ming.getName());
+
+
+      // ## 2. 請問下述的結果為?
+      // function sayHi() {
+      //   this.name = ' 小明 '
+      // }
+      // sayHi.__proto__.getName = function () {
+      //   return this.name
+      // }
+      // console.log(sayHi.getName());
+
+
+      // ## 3. 承上題,請問下述的結果為?
+      // console.log(sayHi.__proto__.getName === Function.prototype.getName);
+
+
+      // ## 4. 請問下述的結果為?
+      // var person = {
+      //   name: ' 小明 '
+      // }
+      // Object.prototype.getName = function () {
+      //   console.log(` 我是 ${this.name}`);
+      // }
+      // person.getName();
+
+
+      // ## 5. 請問下述的結果為?
+      // var person = {
+      //   getName: function () {
+      //     console.log(' 我是小明 ');
+      //   }
+      // }
+      // Object.prototype.getName = function () {
+      //   console.log(' 我是杰倫 ');
+      // }
+      // person.getName();
+
+
+      // ## 6. 請問下述的結果為?
+      // Object.defineProperty(window, 'myName', {
+      //   value: ' 小明 ',
+      //   writable: false,
+      // });
+      // myName = ' 恩娣 ';
+      // console.log(myName);
+
+
+      // ## 7. 請問下述的結果為?
+      // (() => {
+      //   'use strict';
+      //   Object.defineProperty(window, 'myName', {
+      //     value: ' 小明 ',
+      //     writable: false,
+      //   });
+      //   myName = ' 恩娣 ';
+      //   console.log(myName);
+      // })();
+
+
+      // ## 8. 請問印出 Ming 物件時,會不會看到 getName 方法?
+      // function Person(name) {
+      //   this.name = name;
+      // }
+      // Object.defineProperty(Person.prototype, 'getName', {
+      //   value: function () {
+      //     return this.name;
+      //   },
+      //   enumerable: false,
+      // });
+      // var Ming = new Person(' 小明 ');
+      // console.log(Ming);
+      // for (const key in Ming) {
+      //   console.log(key);
+      // }
+
+
+      // ## 9. 請問下述的結果為?
+      // class Person {
+      //   constructor(name) {
+      //     this.name = name;
+      //   }
+      //   getName() {
+      //     return this.name;
+      //   }
+      // }
+      // Person.prototype.sayHi = function () {
+      //   console.log(this.name + ' 你好 ');
+      // }
+      // var Ming = new Person(' 小明 ');
+      // Ming.sayHi();
+
+
+      // ## 10. 承上題,請問下述的結果為?
+      // console.log(Ming.__proto__.sayHi === Person.prototype.sayHi);
+      // console.log(Ming.__proto__.getName === Person.prototype.getName);
+    </script>
+  </body>
+
+</html>

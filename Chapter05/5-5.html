@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 1. 請問下述的結果為?
+      // var myName = ' 小明 ';
+      // (function (fn) {
+      //   console.log(fn(myName));
+      // })(function () {
+      //   return ' 恩娣 ';
+      // });
+
+
+      // ## 2. 請問下述的結果為?
+      // function callSomeone(a, b, fn) {
+      //   var result = a + b;
+      //   return fn(result);
+      // }
+      // var answer = callSomeone(1, 2, function (res) {
+      //   return res * res;
+      // });
+      // console.log(answer);
+
+
+      // ## 3. 請問 demoData 記憶體是否有被釋放?
+      // function randomString(length) {
+      //   var result = '';
+      //   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      //   var charactersLength = characters.length;
+      //   for (var i = 0; i < length; i++) {
+      //     result += characters.charAt(Math.floor(Math.random() *
+      //       charactersLength));
+      //   }
+      //   return result;
+      // }
+      // var fn = function () {
+      //   var demoData = [];
+      //   for (var i = 0; i < 1000; i++) {
+      //     demoData.push(randomString(1000))
+      //   }
+      //   return demoData.length;
+      // }
+      // console.log(fn());
+
+
+      // ##4. 請問下述的結果為?
+      // var fn = function (num) {
+      //   return function () {
+      //     return num++;
+      //   }
+      // }
+      // var a = fn(1);
+      // a();
+      // a();
+      // var b = fn(1);
+      // console.log(b());
+
+
+      // ## 5. 請問下述的結果為?
+      // var myName = ' 小明 ';
+      // var obj = {
+      //   fn: function () {
+      //     var myName = ' 杰倫 ';
+      //     console.log(this.myName);
+      //   },
+      //   myName: ' 恩娣 ',
+      // }
+      // obj.fn();
+
+
+      // ## 6. 請問下述的結果為?
+      // var myName = ' 小明 ';
+      // var obj = {
+      //   fn: function () {
+      //     var myName = ' 杰倫 ';
+      //     setTimeout(function () {
+      //       console.log(this.myName);
+      //     }, 1);
+      //   },
+      //   myName: ' 恩娣 ',
+      // }
+      // obj.fn();
+
+
+      // ## 7. 請問下述的結果為?
+      // var myName = ' 小明 ';
+      // var obj = {
+      //   fn: function () {
+      //     var myName = ' 杰倫 ';
+      //     setTimeout(() => {
+      //       console.log(this.myName);
+      //     }, 1);
+      //   },
+      //   myName: ' 恩娣 ',
+      // }
+      // obj.fn();
+
+
+      // ## 8. 請問下述的結果為?
+      // var value = 'global';
+      // var foo = {
+      //   value: 'local',
+      //   bar: function () {
+      //     return this.value;
+      //   }
+      // }
+      // console.log(foo.bar());
+
+
+      // ## 9. 延續上題,請問以下結果為?
+      // console.log((foo.fn = foo.bar)());
+
+
+      // ## 10. 請問下述的結果為?
+      // function a(a) {
+      //   return a();
+      // }
+      // function b(b) {
+      //   return b;
+      // }
+      // function c() {
+      //   return 1;
+      // }
+      // console.log('answer:', a(b(c)));
+    </script>
+  </body>
+
+</html>

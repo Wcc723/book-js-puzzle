@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 1. 請問下述的結果為 ?
+      // var a = {};
+      // var b = a;
+      // var c = b = { name: 1 };
+      // c.name = ' 小明 ';
+      // console.log(a);
+
+
+      // ## 2. 請問下述的結果為?
+      // var person = {
+      //   name: ' 小明 '
+      // };
+      // function fn(p) {
+      //   p.name = ' 恩娣 ';
+      // }
+      // fn(person);
+      // console.log(person.name);
+
+      // ## 3. 請問下述的結果為?
+      // var person = {
+      //   name: ' 小明 '
+      // };
+      // function fn(p) {
+      //   return p.name = ' 恩娣 ';
+      // }
+      // var person2 = fn(person);
+      // console.log(person2);
+
+      // ## 4. 請問下述的結果為?
+      // function a() {
+      // };
+      // var b = a;
+      // console.log(a === b);
+
+
+      // ## 5. 請問下述的結果為?
+      // function fn() {
+      //   a = 1;
+      // }
+      // fn.a = 2
+      // console.log(fn.a);
+
+
+      // ## 6. 請問下述的結果為?
+      // var arr = [1, 2, 3];
+      // var arr2 = arr;
+      // arr2[2] = 4;
+      // console.log(arr[2]);
+
+
+      // ## 7. 請問下述的結果為?
+      // (function () {
+      //   var a = b = { x: 1 };
+      // })();
+      // var c = b.x;
+      // console.log(c);
+
+
+      // ## 8. 請問下述的結果為?
+      // var family = JSON.parse('[{"name":" 小明家 ","members":[" 小明 "," 小明媽 "," 小明爸 "]}]');
+      // var family2 = family[0].members;
+      // family2[0] = ' 杰倫 ';
+      // console.log(family[0].members[0]);
+
+
+      // ## 9. 請問下述的結果為?
+      // var person = {
+      //   name: ' 小明 ',
+      //   friend: ' 恩娣 ',
+      //   ages: 16
+      // }
+      // console.log(Object.keys(person).length);
+
+
+      // ## 10. 請問下述的結果為?
+      // var arr = [];
+      // var person = {
+      //   name: ' 小明 ',
+      //   friend: ' 恩娣 ',
+      //   ages: 16
+      // }
+      // Object.keys(person).forEach(function (item) {
+      //   arr.push(item);
+      // });
+      // console.log(arr);
+    </script>
+  </body>
+
+</html>

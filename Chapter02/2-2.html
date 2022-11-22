@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // # ASI 自動插入分號
+      // console.log(' 小明 ')
+      // [1, 2, 3].forEach(item => {
+      //   console.log(item)
+      // })
+
+
+      // ## 09 ASI 是什麼?
+      // 因為 ASI,所以沒有分號也能正確運作
+      // var myName = ' 小明 '
+      // console.log(myName)
+      // 如果沒有 ASI,實際運作會將 console.log 與 ' 小明 ' 視為同一行
+      // var myName = ' 小明 'console.log(myName)
+
+
+      // ## 不自動加入分號的情境
+      // var a = 1
+      // var b = a
+      // (a + b).toString() // Uncaught TypeError
+      // (function() { })() // Uncaught TypeError
+      // var a = 1
+      // var b = a
+      // /test/.test(b) // Uncaught SyntaxError
+
+
+      // var a = 2
+      // var b = a
+      // +a // b 值結果為 4
+
+
+      // var a = 2
+      // var b = a
+      // .toString() // b 會被轉為字串
+      // var c = 1
+      // ,d = 2 // d 一樣會 var 被宣告
+
+
+      // ok
+      // ;(function () {
+      // window.alert('ok')
+      // }())
+      // avoid
+      // (function () {
+      // window.alert('ok')
+      // }())
+
+
+      // ## 小節測驗
+      // var a = 10
+      // (a + 10).toString()
+      // console.log(a)
+    </script>
+  </body>
+
+</html>

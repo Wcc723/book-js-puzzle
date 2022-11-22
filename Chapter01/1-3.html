@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 先宣告還是後宣告?
+      // var a = 1;
+      // var b = 2;
+      // var c = a + b;
+      // console.log(c); // 3
+
+
+      // 位置 1:放在前方
+      // function sum(a, b) {
+      //   return a + b;
+      // }
+      // var a = 1;
+      // var b = 2;
+      // var c = sum(a, b);
+      // console.log(c);
+
+      // 位置 2:放在後方
+      // function sum(a, b) {
+      //   return a + b;
+      // }
+
+
+      // ## 05 什麼是提升?
+      // var myName = ' 小明 ';
+      // console.log(myName); // ' 小明 '
+
+
+      // console.log(myName); // undefined
+      // var myName = ' 小明 ';
+
+
+      // 1. 列出創造階段(var 提升至前方 )
+      // var myName;
+      // 2. 調整執行階段( 賦予值 )
+      // console.log(myName); // undefined
+      // myName = ' 小明 ';
+
+
+      // callName();
+      // function callName() {
+      //   console.log(' 我是小明 ');
+      // }
+
+
+      // 函式陳述式
+      // function fn() {
+      //   console.log(' 這是函式陳述式 ');
+      // }
+      // 函式表達式
+      // var fn = function () {
+      //   console.log(' 這是函式表達式 ');
+      // }
+
+
+      // 函式表達式
+      // var callName = function () {
+      //   console.log(' 我是恩娣 ');
+      // };
+      // 函式陳述式
+      // function callName() {
+      //   console.log(' 我是小明 ');
+      // }
+      // callName();
+
+
+      // 創造階段
+      // function callName() { // 優先提升於前方
+      //   console.log(' 我是小明 ');
+      // }
+      // var callName; // var 所宣告變數 / 函式會在陳述式後提升
+      // 執行階段
+      // callName = function () {
+      //   console.log(' 我是恩娣 ');
+      // };
+      // callName();
+
+
+      // ## let, const 的 TDZ
+      // console.log(myName);
+      // let myName = ' 小明 ';
+
+
+      // ## 小節測驗
+      // var fn = function () {
+      //   console.log(' 恩娣 ');
+      // }
+      // fn();
+      // function fn() {
+      //   console.log(' 小明 ');
+      // }
+    </script>
+  </body>
+
+</html>

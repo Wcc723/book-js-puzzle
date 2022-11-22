@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ## 陣列
+      var arr = [1, 2, ' 小明 ', {
+        myName: ' 恩娣 '
+      }];
+
+      console.log(arr[1]); // 2
+      console.log(arr[2]); // ' 小明 '
+
+
+      // ## 24 陣列錯誤新增值的方法,會導致什麼問題?
+      // var arr = [' 小明 ', ' 杰倫 ', ' 恩娣 '];
+      // arr.push(' 媽媽 ');
+      // console.log(arr); // [' 小明 ', ' 杰倫 ', ' 恩娣 ', ' 媽媽 ']
+      // console.log(arr[3]); // ' 媽媽 '
+
+      // arr[5] = ' 爸爸 ';
+      // console.log(arr); // 索引 4 會是一個 empty
+      // console.log(arr.length); // 被額外加入的 empty 也會占用陣列空間
+      // console.log(arr[4]); // 會回傳 undefined,請別這麼做
+
+
+      // ## 25 陣列 for loop 與 forEach 的差異
+      // function getArr() {
+      //   console.log(arguments);
+      //   // forEach 無法使用在部分類陣列上
+      //   arguments.forEach(function (item) {
+      //     console.log(item);
+      //   });
+      //   // for 迴圈則無此限制
+      //   for (let index = 0; index < arguments.length; index++) {
+      //     const item = arguments[index];
+      //     console.log(item, index);
+      //   }
+      // }
+      // getArr(1, 2, 3, 4, 5);
+
+
+      // function getArr() {
+      //   // 使用展開可將類陣列轉為純陣列
+      //   const arr = [...arguments];
+      //   arr.forEach(function (item) {
+      //     console.log(item);
+      //   });
+      // }
+      // getArr(1, 2, 3, 4, 5);
+
+
+      // ## 差異二:forEach 無法被中斷
+      // const people = [
+      //   { name: ' 小明 ' },
+      //   { name: ' 恩娣 ' },
+      //   { name: ' 杰倫 ' }
+      // ];
+      // for (let index = 0; index < people.length; index++) {
+      //   const person = people[index];
+      //   if (person.name === ' 恩娣 ') {
+      //     break; // 中斷執行
+      //   }
+      //   console.log(person.name);
+      // }
+
+
+      // ## 差異三:forEach 搭配 async / await 無法逐步執行
+
+      // function getResolve(param) {
+      //   return new Promise((resolve, reject) => {
+      //     setTimeout(function () {
+      //       resolve(param)
+      //     }, 1000);
+      //   });
+      // }
+      // (async function () {
+      //   const res = await getResolve(' 小明 ');
+      //   console.log(res); // 一秒後出現 ' 小明 '
+      // })();
+
+
+      // 怪怪的 ch4 30 頁
+      // (async function () {
+      //   const res = await getResolve(' 小明 ');
+      //   console.log(res); // 一秒後出現 ' 小明 '
+      //   const res = await getResolve(' 恩娣 '); // 上方結束後,在執行此行請求
+      // })();
+
+
+      // const people = [
+      //   { name: ' 小明 ' },
+      //   { name: ' 恩娣 ' },
+      //   { name: ' 杰倫 ' }
+      // ];
+
+
+      // (async function () {
+      //   for (let index = 0; index < people.length; index++) {
+      //     const res = await getResolve(people[index]);
+      //     console.log(res);
+      //   }
+      //   console.log('done');
+      // })();
+
+
+      // (function () {
+      //   people.forEach(async function (person) {
+      //     const res = await getResolve(person);
+      //     console.log(res); // 幾乎一起出現
+      //   });
+      //   console.log('done');
+      // })();
+
+
+      // ## 26 物件如何使用迴圈手法
+      // const people = {
+      //   ming: { name: ' 小明 ' },
+      //   auntie: { name: ' 恩娣 ' },
+      //   jay: { name: ' 杰倫 ' }
+      // };
+      // console.log(people); // ['ming', 'auntie', 'jay']
+      // Object.keys(people).forEach(function (key) {
+      //   console.log(key, people[key]); // 特定物件 key, 特定物件值
+      // });
+
+      // ## 小節測驗
+      // 1. 請問以下哪一個選項可以選擇到 ' 杰倫媽 ' ?
+      // var family = [
+      //   {
+      //     name: ' 小明家 ',
+      //     members: [' 小明 ', ' 小明媽 ', ' 小明爸 ']
+      //   },
+      //   {
+      //     name: ' 杰倫家 ',
+      //     members: [' 杰倫 ', ' 杰倫媽 ', ' 杰倫爸 ']
+      //   },
+      // ];
+    </script>
+  </body>
+
+</html>
